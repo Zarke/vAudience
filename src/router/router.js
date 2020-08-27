@@ -8,12 +8,6 @@ const router = createRouter({
         {
             path: '/video',
             component: Video,
-            // beforeEnter(to, from, next) {
-            //     console.log(state.loggedIn)
-            //     if(this.props.isLoggedIn === "") {
-            //         next('/')
-            //     }
-            // }
         }
     ],
 

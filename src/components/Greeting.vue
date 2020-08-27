@@ -1,5 +1,5 @@
 <template>
-  <span class="greeting">Greetings {{greeting}}</span>
+  <span class="greeting" :class="(store.state.theme === 'Light')?'greeting-light':'greeting-dark'">Greetings {{greeting}}</span>
 </template>
 
 <script>
@@ -19,17 +19,24 @@ export default {
       }
     })
 
-    return {greeting}
+
+    return {greeting, store}
   }
 }
 </script>
 
-<style scoped>
-  .greeting {
+<style lang="scss">
+  .greeting{
     margin-right: 10rem;
     font-size: 1.2rem;
     text-transform: uppercase;
     padding: 0.2rem;
-    text-shadow: 0.2rem 0.2rem lightgray;
+    &-light {
+      text-shadow: 0.2rem 0.2rem lightgray;
+      color: black;
+    }
+    &-dark {
+      color: white;
+    }
   }
 </style>

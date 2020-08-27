@@ -1,10 +1,10 @@
 <template>
-  <div class="footer">
+  <footer class="footer" :class="(store.state.theme === 'Light')?'footer-light':'footer-dark'">
     <label class="switch">
       <input type="checkbox" @change="switchTheme">
       <span class="slider round"></span>
     </label>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -17,14 +17,12 @@ export default {
     const switchTheme = () => {
       if(store.state.theme === "Light"){
         store.commit("setTheme", "Dark")
-        console.log(store.state.theme)
       } else {
         store.commit("setTheme", "Light")
-        console.log(store.state.theme)
       }
     }
 
-    return {switchTheme}
+    return {switchTheme, store}
   }
 }
 </script>
@@ -33,6 +31,14 @@ export default {
   .footer{
     display: flex;
     justify-content: center;
+    padding: 1rem 0 1rem 0;
+    margin: 0 -0.8rem -0.8rem -0.8rem;
+    &-light{
+      background-color: white;
+    }
+    &-dark{
+      background-color: black;
+    }
   }
   .switch {
     position: relative;

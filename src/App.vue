@@ -1,9 +1,10 @@
 <template>
-  <Home />
+    <Home/>
 </template>
 
 <script>
 import Home from './components/Home'
+
 export default {
   name: 'App',
 
@@ -20,6 +21,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 </style>

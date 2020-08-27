@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import {useStore} from "vuex";
 import {useRouter} from "vue-router";
 
@@ -35,6 +35,10 @@ export default {
         btnTextChange()
       }
     }
+
+    onMounted(() => {
+      login()
+    })
 
     const btnTextChange = () => {
       if(username.value !== "") {

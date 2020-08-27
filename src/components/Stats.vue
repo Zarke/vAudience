@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import {ref} from 'vue'
+import {ref, onMounted} from 'vue'
 export default {
   name: 'Stats',
   setup() {
@@ -22,8 +22,11 @@ export default {
           away.value = data.statistics["Ball Possession"].away
       })
     }
-
     setInterval(getStats, 10000)
+
+    onMounted(() => {
+      getStats()
+    })
 
     return {getStats, home, away}
   }
